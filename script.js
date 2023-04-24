@@ -1,4 +1,10 @@
 var button = document.getElementById('btn')
+var nextBtn= document.createElement('button')
+
+var form = document.getElementById('form');
+
+
+
 
 
 
@@ -7,8 +13,13 @@ var button = document.getElementById('btn')
    var response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
       var data = await response.json()
       
-      console.log(data.title)
-      
+      console.log(data)
+
+      function next(){
+      nextBtn.innerHTML= ">"
+      form.appendChild(nextBtn)
+    } next()
+
      document.getElementById("display").innerHTML = data.title; 
 };
 
