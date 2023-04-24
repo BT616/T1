@@ -4,12 +4,17 @@ var button = document.getElementById('btn')
 
 
  async function start(){
-   await fetch('https://jsonplaceholder.typicode.com/todos/1')
-      .then(response => response.json())
-      .then(json => console.log(json))
+   var response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+      var data = await response.json()
+      
+      console.log(data.title)
+      
+     document.getElementById("display").innerHTML = data.title; 
+};
 
-      console.log(response)
-}
-document.getElementById("display").innerHTML = response
+
+
+
+
 
 button.addEventListener("click",start)
